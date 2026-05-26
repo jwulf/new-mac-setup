@@ -17,3 +17,4 @@
 14. Install llama.cpp: `brew install llama.cpp`
 15. Get the Gemma 4 model (from [here](https://ai.plainenglish.io/i-built-a-gemma-4-ai-agent-it-kept-looping-until-i-fixed-this-1ef53f50158c): `llama-server -hf unsloth/gemma-4-26B-A4B-it-GGUF:UD-Q4_K_M --port 1234 -ngl 99 -c 32768 -np 1 --jinja -ctk q8_0 -ctv q8_0`
 16. Configure pi for llama.cpp — edit `~/.pi/agent/settings.json` add: `"llamaServerUrl": "http://127.0.0.1:1234"`
+17. [Generate SSH Key for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
