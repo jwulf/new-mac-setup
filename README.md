@@ -20,3 +20,5 @@
 17. Configure pi for llama.cpp — edit `~/.pi/agent/settings.json` add: `"llamaServerUrl": "http://127.0.0.1:1234"`
 18. [Generate SSH Key for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 19. Install OpenJDK: `brew install openjdk`
+20. Install [GhostTTY](https://ghostty.org/download)
+21. Install Orbstack: `brew install orbstack`
