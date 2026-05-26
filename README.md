@@ -13,12 +13,13 @@
 10. Install Pi LSP: `pi install npm:pi-lsp-extension`
 11. Install Pi GitHub: `pi install npm:pi-gh-cli`
 12. Install Pi llama.cpp: `pi install npm:pi-llama-cpp`
-13. Install Zed Biome: "Open zed: extensions and search for Biome"
-14. Install Zed Haskell: "Open zed: extensions and search for Haskell"
-15. Install llama.cpp: `brew install llama.cpp`
-16. Get the Gemma 4 model (from [here](https://ai.plainenglish.io/i-built-a-gemma-4-ai-agent-it-kept-looping-until-i-fixed-this-1ef53f50158c)): `llama-server -hf unsloth/gemma-4-26B-A4B-it-GGUF:UD-Q4_K_M --port 1234 -ngl 99 -c 32768 -np 1 --jinja -ctk q8_0 -ctv q8_0`
-17. Configure pi for llama.cpp — edit `~/.pi/agent/settings.json` add: `"llamaServerUrl": "http://127.0.0.1:1234"`
-18. [Generate SSH Key for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-19. Install OpenJDK: `brew install openjdk`
-20. Install [GhostTTY](https://ghostty.org/download)
-21. Install Orbstack: `brew install orbstack`
+13. Install Pi Let's Cook: `pi install npm:@linimin/pi-letscook`
+14. Install Zed Biome: "Open zed: extensions and search for Biome"
+15. Install Zed Haskell: "Open zed: extensions and search for Haskell"
+16. Install llama.cpp: `brew install llama.cpp`
+17. Get the Gemma 4 model (from [here](https://ai.plainenglish.io/i-built-a-gemma-4-ai-agent-it-kept-looping-until-i-fixed-this-1ef53f50158c)): `llama-server -hf unsloth/gemma-4-26B-A4B-it-GGUF:UD-Q4_K_M --port 1234 -ngl 99 -c 32768 -np 1 --jinja -ctk q8_0 -ctv q8_0`
+18. Configure pi for llama.cpp — edit `~/.pi/agent/settings.json` add: `"llamaServerUrl": "http://127.0.0.1:1234"`
+19. [Generate SSH Key for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+20. Install OpenJDK: `brew install openjdk`
+21. Install [GhostTTY](https://ghostty.org/download)
+22. Install Orbstack: `brew install orbstack`
