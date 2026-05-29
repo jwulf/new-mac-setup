@@ -31,3 +31,5 @@
 28. Install .NET 8: `asdf install dotnet 8.0.421` 
 29. Install .NET 9: `asdf install dotnet 9.0.314`
 30: Install .NET 10: `asdf install dotnet latest`
+31. Install Clojure: `brew install clojure/tools/clojure`
+21. Install Zed Clojure: "Open zed: extensions and search for Clojure"
