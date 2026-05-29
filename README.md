@@ -14,7 +14,7 @@
 11. Install Pi LSP: `pi install npm:pi-lsp-extension`
 12. Install Pi GitHub: `pi install npm:pi-gh-cli`
 13. Install Pi llama.cpp: `pi install npm:pi-llama-cpp`
-14. Install Pi Let's Cook: `pi install npm:@linimin/pi-letscook`
+14. Install Pi Context-Mode: `npm install -g context-mode && pi install npm:context-mode`
 15. Install Pi Memory: `pi install npm:@pi-unipi/memory`
 16. Install Zed Biome: "Open zed: extensions and search for Biome"
 17. Install Zed Haskell: "Open zed: extensions and search for Haskell"
@@ -28,4 +28,6 @@
 25. Install uv (Python): `curl -LsSf https://astral.sh/uv/install.sh | sh`
 26. Install asdf: `brew install asdf`
 27. Install asdf .NET plugin: `asdf plugin add dotnet`
-28. Install .NET 8: `asdf install dotnet 8` 
+28. Install .NET 8: `asdf install dotnet 8.0.421` 
+29. Install .NET 9: `asdf install dotnet 9.0.314`
+30: Install .NET 10: `asdf install dotnet latest`
