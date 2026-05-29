@@ -33,3 +33,6 @@
 30: Install .NET 10: `asdf install dotnet latest`
 31. Install Clojure: `brew install clojure/tools/clojure`
 21. Install Zed Clojure: "Open zed: extensions and search for Clojure"
+22. Install Little Coder: `npm i -g little-coder`
+23. Set nano as git editor: `git config --global core.editor "nano"`
+24. Set up git identity: `git config --global --edit`
