@@ -36,3 +36,59 @@
 22. Install Little Coder: `npm i -g little-coder`
 23. Set nano as git editor: `git config --global core.editor "nano"`
 24. Set up git identity: `git config --global --edit`
+25. Install bun: `npm i -g bun`
+26. Install qmd for Pi memory search: `npm i -g @tobi/qmd`
+28. Install MacMLX, and download Qwen model
+29. Install omlx: `brew install omlx --with-grammar`
+30. Model for omlx config in ~/.config/little-coder/models.json:
+
+```json
+{
+  "providers": {
+    "omlx": {
+      "api": "openai-completions",
+      "baseUrl": "http://127.0.0.1:8000/v1",
+      "apiKey": "IGNORED",
+      "models": [
+        {
+          "id": "Qwen3-32B-4bit",
+          "name": "Qwen3.6-35B-A3B (local omlx, 150K)",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 150000,
+          "maxTokens": 4096,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        }
+      ]
+    }
+  }
+}
+```
+
+## Local multi-model LLM (llama.cpp router)
+
+Serve several local GGUF models behind one OpenAI-compatible endpoint using
+llama.cpp's built-in **router mode**. This exposes llama.cpp's native model
+management (`/models`, `/models/load`, `/models/sse`) that the `pi-llama-cpp`
+extension uses to browse/load/switch models — plain `llama-swap` does **not**
+implement those endpoints (pi gets HTTP 404), so use the router for pi.
+
+```bash
+./start-llm-router.sh          # binds :: (IPv4+IPv6) on :8888
+```
+
+- Models are defined in `llama-router.ini` (currently `qwen3.8` and
+  `minicpm5-2b`); the `[*]` section holds shared defaults. Local models use
+  `model = /path/to.gguf`, remote ones use `hf = user/repo:quant`.
+- The router also auto-lists any other GGUFs in your Hugging Face cache.
+- Env overrides: `LLAMA_ROUTER_PORT`, `LLAMA_ROUTER_HOST`,
+  `LLAMA_ROUTER_MODELS_MAX` (default `2` = both resident; `1` = hot-swap).
+- Clients pick the model via the OpenAI `model` field, e.g. `qwen3.8` or
+  `minicpm5-2b`. pi: set `llamaServerUrl` to `http://<host>:8888`; little-coder:
+  set `baseUrl` to `http://<host>:8888/v1`.
+- LAN clients that resolve `<host>.local` to an IPv6 link-local address are
+  covered by the dual-stack (`::`) bind; if a client still fails, use the IPv4
+  literal (e.g. `http://192.168.0.141:8888`).
+
+`start-llm-qwen-3.8.sh` remains a standalone single-model launcher with KV-cache
+save/restore (takes an optional port arg); the router does not use it.
