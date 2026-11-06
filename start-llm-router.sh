@@ -30,7 +30,7 @@ echo "[router] binding:     $HOST:$PORT   (models-max=$MODELS_MAX)"
 echo "[router] local:       http://127.0.0.1:$PORT/v1"
 [ -n "$LAN_IP" ] && echo "[router] LAN (IP):    http://$LAN_IP:$PORT/v1"
 echo "[router] LAN (host):  http://$HOSTNAME_LOCAL.local:$PORT/v1"
-echo "[router] models:      qwen3.8, qwen3.8-neo-coder, qwen3-next-80b, qwen3-coder-30b, deepseek-r1, minicpm5-2b   (preset: $PRESET)"
+echo "[router] models:      qwen3.8, qwen3.8-neo-coder, qwen3-next-80b, qwen3-coder-30b, deepseek-r1, muse-glimmer, minicpm5-2b   (preset: $PRESET)"
 
 exec llama-server \
   --models-preset "$PRESET" \

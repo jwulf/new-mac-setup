@@ -1,0 +1,1 @@
+splash-m1 serve --model incoai/Qwen3.8-27B-Splash --host 0.0.0.0 --allowed-host Joshs-MacBook-Pro.local --port 8765 --max-context 131072 --max-cache-disk 100G --prefill-mode full
